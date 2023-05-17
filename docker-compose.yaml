@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+
+#############################################
+## UTILITY CONTAINER COMMANDS
+#############################################
+  angular:
+    image: angular-emmanuel
+    build: 
+      context: ./
+      dockerfile: ./docker/angular.dockerfile
+      args:
+        - ANGULAR_VERSION=latest
+        - WORKING_DIRECTORY=/home/node
+    ports:
+      - '80:4200'
+    volumes:
+      - ./frontend:/home/node:rw
+
+#############################################
+## APP CONTAINER COMMANDS
+#############################################
+  app:
+    image: angular-app-emmanuel
+    build: 
+      context: ./
+      dockerfile: ./docker/angular.app.dockerfile
+      args:
+        - ANGULAR_VERSION=latest
+        - WORKING_DIRECTORY=/home/node
+        - PROJECTNAME=frontend
+    ports:
+      - '80:4200'
+    volumes:
+      - ./frontend:/home/node:rw
+      - /home/node/node_modules
