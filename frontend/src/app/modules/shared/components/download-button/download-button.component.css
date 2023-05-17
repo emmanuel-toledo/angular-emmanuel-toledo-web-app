@@ -1,0 +1,21 @@
+.download-cv-button {
+    background-color: transparent;
+    border-radius: 12px;
+    padding: 15px 45px;
+    border: 2px solid #CBCDCF;
+    cursor: pointer;
+    color: #3D4451;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.download-cv-button:focus {
+    outline: none;
+}
+
+.download-cv-button:active {
+    transform: scale(0.98);
+}
+
+.download-cv-button i {
+    margin-right: 10px;
+}
