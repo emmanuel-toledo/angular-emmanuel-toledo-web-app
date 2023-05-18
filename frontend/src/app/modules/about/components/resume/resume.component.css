@@ -1,0 +1,5 @@
+.about-me .text {
+    color: #9DA0A7;
+    word-wrap: break-word;
+    font-size: var(--md-font-size);
+}
